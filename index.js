@@ -29,7 +29,7 @@ var addInfo = {
   ]
 };
 // 请填写无忧代理订单号
-var order = '532ee9c8fda8e92daeaee7bea98b0bcd';
+var order = '532';
 // 要测试的网址
 var targetURL = 'http://ip.chinaz.com/getip.aspx';
 // 请求超时时间
@@ -133,17 +133,7 @@ async function getData() {
       .set('Cookie', cookie)
       // 发送数据
       .send({
-        pageNumber: i,
-        reqType: 'bidSearch',
         searchvalue: searchString,
-        area: '',
-        subtype: '',
-        publishtime: '',
-        selectType: 'title',
-        minprice: '',
-        maxprice: '',
-        industry: '',
-        tabularflag: 'Y',
       })
     if (JSON.parse(response.text).list !== null) {
       // 转译需要的数据 将数据转换成json
